@@ -5,5 +5,5 @@ export interface IMoment {
     image: string,
     created_at?: string,
     updated_at: string,
-    commnets?: [{ text: string, username: string }]
+    comments?: [{ text: string, username: string }]
 }
