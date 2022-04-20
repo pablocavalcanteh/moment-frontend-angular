@@ -23,5 +23,10 @@ export class MomentService {
   getAllMoments(): Observable<IResponse<IMoment[]>> {
     return this.http.get<IResponse<IMoment[]>>(this.apiUrl)
   }
-  
+
+  getMomentById(id: number): Observable<IResponse<IMoment>> {
+    const url = `${this.apiUrl}/${id}`
+    return this.http.get<IResponse<IMoment>>(url)
+  }
+
 }
