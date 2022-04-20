@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { IMoment } from '../IMoment'
+import { IResponse } from '../IResponse';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -18,4 +19,9 @@ export class MomentService {
   createMoment(formData: FormData): Observable<FormData> {
     return this.http.post<FormData>(this.apiUrl, formData)
   }
+
+  getAllMoments(): Observable<IResponse<IMoment[]>> {
+    return this.http.get<IResponse<IMoment[]>>(this.apiUrl)
+  }
+  
 }
